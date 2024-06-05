@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.UUID;
 
 @Entity
-@Table(name = "BookSupplierItem")
+@Table(name = "\"BookSupplierItem\"")
 @Setter
 @Getter
 public class BookSupplierItem {
@@ -19,6 +19,6 @@ public class BookSupplierItem {
     private Integer pages;
 
     @OneToOne
-    //@JoinColumn(name = "bookSupplierItemId")
+//    @JoinColumn(name = "bookSupplierItemId")
     private SupplierItem supplierItem;
 }

@@ -12,9 +12,9 @@ import java.util.UUID;
 @Setter
 @Embeddable
 public class QuoteSupplierItemId implements Serializable {
-    @Column(name = "Quote_quoteId")
+    @Column(name = "\"Quote_quoteId\"")
     private UUID quoteId;
 
-    @Column(name = "SupplierItem_supplierItemId")
+    @Column(name = "\"SupplierItem_supplierItemId\"")
     private UUID supplierItemId;
 }

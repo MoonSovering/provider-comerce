@@ -12,7 +12,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "LibraryItem_Loan")
+@Table(name = "\"LibraryItem_Loan\"")
 public class LibraryItemLoan {
 
 

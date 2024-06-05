@@ -11,7 +11,7 @@ import java.util.UUID;
 @Setter
 @Getter
 @NoArgsConstructor
-@Table(name = "Assistant")
+@Table(name = "\"Assistant\"")
 public class Assistant {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

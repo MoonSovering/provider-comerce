@@ -11,7 +11,7 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "Quote_SupplierItem")
+@Table(name = "\"Quote_SupplierItem\"")
 public class QuoteSupplierItem {
 
     @EmbeddedId

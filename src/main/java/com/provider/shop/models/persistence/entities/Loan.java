@@ -17,7 +17,7 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "Loan")
+@Table(name = "\"Loan\"")
 public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

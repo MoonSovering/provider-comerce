@@ -1,6 +1,7 @@
 package com.provider.shop.shared.config.springSecurity;
 
 import com.provider.shop.models.persistence.repositories.UserJpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class AppConfig {
 
+    @Autowired
     private final UserJpaRepository repository;
 
     public AppConfig(UserJpaRepository repository) {
@@ -39,6 +41,6 @@ public class AppConfig {
     }
     @Bean
     public UserDetailsService userDetailService() {
-        return username -> (UserDetails) repository.findByUserName(username);
+        return username -> (UserDetails) repository.findByusername(username);
     }
 }

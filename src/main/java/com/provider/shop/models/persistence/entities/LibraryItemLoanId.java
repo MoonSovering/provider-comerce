@@ -12,9 +12,9 @@ import java.util.UUID;
 @Getter
 @Setter
 public class LibraryItemLoanId implements Serializable {
-    @Column(name = "LibraryItem_libraryItemId")
+    @Column(name = "\"LibraryItem_libraryItemId\"")
     private UUID libraryItemId;
 
-    @Column(name = "Loan_loanId")
+    @Column(name = "\"Loan_loanId\"")
     private UUID loanId;
 }
