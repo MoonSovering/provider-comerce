@@ -13,11 +13,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class AppConfig {
 
-    private final ClientJpaRepository repository;
+    //private final ClientJpaRepository repository;
 
-    public AppConfig(ClientJpaRepository repository) {
+    /*public AppConfig(ClientJpaRepository repository) {
         this.repository = repository;
-    }
+    }*/
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception{
@@ -37,6 +37,6 @@ public class AppConfig {
     }
     @Bean
     public UserDetailsService userDetailService() {
-        return username -> repository.findByUsername(username);
+        return username -> null;
     }
 }
