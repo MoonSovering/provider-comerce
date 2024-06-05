@@ -1,5 +1,6 @@
 package com.provider.shop.models.persistence.entities;
 
+import com.provider.shop.shared.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,8 @@ public class User {
     private String email;
     private String password;
     private LocalDate registeredAt;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Assistant assistant;

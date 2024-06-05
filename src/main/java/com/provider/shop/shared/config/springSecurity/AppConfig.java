@@ -1,11 +1,13 @@
 package com.provider.shop.shared.config.springSecurity;
 
+import com.provider.shop.models.persistence.repositories.UserJpaRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,11 +15,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class AppConfig {
 
-    //private final ClientJpaRepository repository;
+    private final UserJpaRepository repository;
 
-    /*public AppConfig(ClientJpaRepository repository) {
+    public AppConfig(UserJpaRepository repository) {
         this.repository = repository;
-    }*/
+    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception{
@@ -37,6 +39,6 @@ public class AppConfig {
     }
     @Bean
     public UserDetailsService userDetailService() {
-        return username -> null;
+        return username -> (UserDetails) repository.findByUserName(username);
     }
 }
