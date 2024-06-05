@@ -31,6 +31,7 @@ public class Loan {
     private Status status;
 
     private String observation;
+    private LocalDate pickUpDate;
     private Integer loanDays;
 
     @JsonBackReference
