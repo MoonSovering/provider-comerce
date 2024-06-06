@@ -23,7 +23,7 @@ public class Reader {
 
     @OneToOne
     @MapsId
-    @JoinColumn(name = "readerId")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @JsonManagedReference
