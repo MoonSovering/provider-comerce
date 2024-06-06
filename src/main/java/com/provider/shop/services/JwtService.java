@@ -29,6 +29,17 @@ public class JwtService {
     public String generateToken(UserDetails client) {
         return generateToken(new HashMap<>(), client);
     }
+
+    public String generateTokenTest(String email) {
+        return Jwts
+                .builder()
+                .setClaims(new HashMap<>())
+                .setSubject(email)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .signWith(getSignIngKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
     private String generateToken(Map<String, Object> extraClaims, UserDetails client){
         return Jwts
                 .builder()

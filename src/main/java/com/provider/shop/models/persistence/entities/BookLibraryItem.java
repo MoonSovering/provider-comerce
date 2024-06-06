@@ -1,5 +1,6 @@
 package com.provider.shop.models.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class BookLibraryItem {
     private Integer pages;
     private String knowledgeArea;
 
+    @JsonBackReference
     @OneToOne
     @MapsId
     @JoinColumn(name = "bookLibraryItemId")
