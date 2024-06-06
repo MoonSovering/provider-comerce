@@ -31,6 +31,7 @@ public class User implements UserDetails {
     private LocalDate registeredAt;
     @Enumerated(EnumType.STRING)
     private UserRole role;
+    private String salt;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Assistant assistant;
