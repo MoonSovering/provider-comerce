@@ -1,5 +1,4 @@
-FROM gradle:7.3.0-jdk17 AS build
-
+FROM gradle:8.7-jdk21 AS build
 WORKDIR /app
 
 COPY . /app
