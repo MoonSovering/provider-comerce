@@ -19,6 +19,7 @@ public class NovelSupplierItem {
     private String genre;
 
     @OneToOne
-//    @JoinColumn(name = "novelSupplierItemId")
+    @MapsId
+    @JoinColumn(name = "novelSupplierItemId")
     private SupplierItem supplierItem;
 }

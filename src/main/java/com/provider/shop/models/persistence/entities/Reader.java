@@ -22,7 +22,8 @@ public class Reader {
     private UUID readerId;
 
     @OneToOne
-    @JoinColumn(name = "readerId")
+    @MapsId
+    @JoinColumn(name = "user_id")
     private User user;
 
     @JsonManagedReference

@@ -18,6 +18,7 @@ public class Assistant {
     private UUID assistantId;
 
     @OneToOne
+    @MapsId
     @JoinColumn(name = "assistantId")
     private User user;
 }

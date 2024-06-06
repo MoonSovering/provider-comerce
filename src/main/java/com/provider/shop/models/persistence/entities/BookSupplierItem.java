@@ -19,6 +19,7 @@ public class BookSupplierItem {
     private Integer pages;
 
     @OneToOne
-//    @JoinColumn(name = "bookSupplierItemId")
+    @MapsId
+    @JoinColumn(name = "bookSupplierItemId")
     private SupplierItem supplierItem;
 }
