@@ -22,6 +22,7 @@ public class Reader {
     private UUID readerId;
 
     @OneToOne
+    @MapsId
     @JoinColumn(name = "readerId")
     private User user;
 

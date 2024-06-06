@@ -18,6 +18,7 @@ public class Admin {
     private UUID adminId;
 
     @OneToOne
+    @MapsId
     @JoinColumn(name = "adminId")
     private User user;
 }

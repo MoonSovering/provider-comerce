@@ -21,6 +21,7 @@ public class BookLibraryItem {
     private String knowledgeArea;
 
     @OneToOne
+    @MapsId
     @JoinColumn(name = "bookLibraryItemId")
     private LibraryItem libraryItem;
 }

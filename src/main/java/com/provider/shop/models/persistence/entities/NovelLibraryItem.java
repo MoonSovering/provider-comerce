@@ -15,12 +15,13 @@ import java.util.UUID;
 public class NovelLibraryItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID novelLibraryItem;
+    private UUID novelLibraryItemId;
 
     private String genre;
     private Integer suggestedAge;
 
     @OneToOne
+    @MapsId
     @JoinColumn(name = "novelLibraryItemId")
     private LibraryItem libraryItem;
 

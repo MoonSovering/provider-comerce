@@ -22,6 +22,7 @@ public class Supplier {
 
     @OneToOne
     @JoinColumn(name = "supplierId")
+    @MapsId
     private User user;
 
     @OneToMany(mappedBy = "supplier", fetch = FetchType.EAGER)
