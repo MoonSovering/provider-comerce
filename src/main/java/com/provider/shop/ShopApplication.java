@@ -18,6 +18,6 @@ public class ShopApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(jwtService.generateTokenTest("test"));
+		System.out.println(jwtService.generateTokenTest("jose"));
 	}
 }
