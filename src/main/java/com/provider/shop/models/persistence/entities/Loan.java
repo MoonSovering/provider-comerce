@@ -42,6 +42,4 @@ public class Loan {
     @JsonManagedReference
     @OneToMany(mappedBy = "loan")
     private List<LibraryItemLoan> libraryItemLoans = new ArrayList<>();
-
-
 }
