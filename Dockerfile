@@ -6,7 +6,7 @@ COPY . /app
 RUN chmod +x ./gradlew
 RUN ./gradlew build
 
-FROM openjdk:21-jdk-nanoserver
+FROM openjdk:21
 
 EXPOSE 3800
 
