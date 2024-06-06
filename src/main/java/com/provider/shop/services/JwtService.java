@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
+import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,17 @@ public class JwtService {
     }
     public String generateToken(UserDetails client) {
         return generateToken(new HashMap<>(), client);
+    }
+
+    public String generateTokenTest(String email) {
+        return Jwts
+                .builder()
+                .setClaims(new HashMap<>())
+                .setSubject(email)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .signWith(getSignIngKey(), SignatureAlgorithm.HS256)
+                .compact();
     }
     private String generateToken(Map<String, Object> extraClaims, UserDetails client){
         return Jwts
@@ -61,7 +73,8 @@ public class JwtService {
     }
 
     public Key getSignIngKey(){
-        byte[] keyBytes= Decoders.BASE64.decode(Constant.SECRET_KEY);
+        byte[] keyBytes= Base64.getEncoder().encodeToString(Constant.SECRET_KEY.getBytes()).getBytes();
+        //Base64.getEncoder().encodeToString(Constant.SECRET_KEY.getBytes());
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
