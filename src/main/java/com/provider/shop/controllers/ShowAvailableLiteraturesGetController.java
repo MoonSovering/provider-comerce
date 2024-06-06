@@ -1,5 +1,6 @@
 package com.provider.shop.controllers;
 
+import com.provider.shop.models.dtos.LiteratureDTO;
 import com.provider.shop.models.persistence.entities.LibraryItem;
 import com.provider.shop.services.ShowAvailableLiteraturesService;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ public class ShowAvailableLiteraturesGetController {
 
     private final ShowAvailableLiteraturesService literaturesService;
     @GetMapping("/literatures")
-    public List<LibraryItem> getAllLiteratures() {
+    public List<LiteratureDTO> getAllLiteratures() {
         return literaturesService.getAllLiteratures();
     }
 
